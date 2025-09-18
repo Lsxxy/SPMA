@@ -1,0 +1,42 @@
+# General
+*.zip
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# C/C++ compiled files
+*.so
+*.o
+*.a
+*.dll
+*.exe
+
+# Build artifacts
+build/
+dist/
+*.ninja
+.ninja_*
+
+# IDE & OS files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+#output and checkpoints
+output/**/*
+!output/**/.gitkeep
+
+checkpoint/**/*
+!checkpoint/**/.gitkeep
