@@ -9,37 +9,37 @@ from utils.hdfs_io import HADOOP_BIN, hexists, hmkdir, hcopy
 def get_dist_launch(args):  # some examples
 
     if args.dist == 'f4':
-        return "CUDA_VISIBLE_DEVICES=0,1,2,3 WORLD_SIZE=4 /root/anaconda3/envs/RITR-SP_MA/bin/python  -W ignore -m torch.distributed.launch --master_port 9998 --nproc_per_node=4 " \
+        return "CUDA_VISIBLE_DEVICES=0,1,2,3 WORLD_SIZE=4 /root/anaconda3/envs/SPMA/bin/python  -W ignore -m torch.distributed.launch --master_port 9998 --nproc_per_node=4 " \
                "--nnodes=1 "
 
     elif args.dist == 'f2':
-        return "CUDA_VISIBLE_DEVICES=0,1 WORLD_SIZE=2 /root/anaconda3/envs/RITR-SP_MA/bin/python  -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=2 " \
+        return "CUDA_VISIBLE_DEVICES=0,1 WORLD_SIZE=2 /root/anaconda3/envs/SPMA/bin/python  -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=2 " \
                "--nnodes=1 "
 
     elif args.dist == 'f3':
-        return "CUDA_VISIBLE_DEVICES=1,2,3 WORLD_SIZE=3 /root/anaconda3/envs/RITR-SP_MA/bin/python -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=3 " \
+        return "CUDA_VISIBLE_DEVICES=1,2,3 WORLD_SIZE=3 /root/anaconda3/envs/SPMA/bin/python -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=3 " \
                "--nnodes=1 "
 
     elif args.dist == 'f12':
-        return "CUDA_VISIBLE_DEVICES=1,2 WORLD_SIZE=2 /root/anaconda3/envs/RITR-SP_MA/bin/python  -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=2 " \
+        return "CUDA_VISIBLE_DEVICES=1,2 WORLD_SIZE=2 /root/anaconda3/envs/SPMA/bin/python  -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=2 " \
                "--nnodes=1 "
 
     elif args.dist == 'f02':
-        return "CUDA_VISIBLE_DEVICES=0,2 WORLD_SIZE=2 /root/anaconda3/envs/RITR-SP_MA/bin/python  -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=2 " \
+        return "CUDA_VISIBLE_DEVICES=0,2 WORLD_SIZE=2 /root/anaconda3/envs/SPMA/bin/python  -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=2 " \
                "--nnodes=1 "
 
     elif args.dist == 'f03':
-        return "CUDA_VISIBLE_DEVICES=0,3 WORLD_SIZE=2 /root/anaconda3/envs/RITR-SP_MA/bin/python  -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=2 " \
+        return "CUDA_VISIBLE_DEVICES=0,3 WORLD_SIZE=2 /root/anaconda3/envs/SPMA/bin/python  -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=2 " \
                "--nnodes=1 "
 
     elif args.dist == 'l2':
-        return "CUDA_VISIBLE_DEVICES=2,3 WORLD_SIZE=2 /root/anaconda3/envs/RITR-SP_MA/bin/python  -W ignore -m torch.distributed.launch --master_port 9998 --nproc_per_node=2 " \
+        return "CUDA_VISIBLE_DEVICES=2,3 WORLD_SIZE=2 /root/anaconda3/envs/SPMA/bin/python  -W ignore -m torch.distributed.launch --master_port 9998 --nproc_per_node=2 " \
                "--nnodes=1 "
 
     elif args.dist.startswith('gpu'):  # use one gpu, --dist "gpu0"
         num = int(args.dist[3:])
         assert 0 <= num <= 8
-        return "CUDA_VISIBLE_DEVICES={:} WORLD_SIZE=1 /root/anaconda3/envs/RITR-SP_MA/bin/python  -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=1 " \
+        return "CUDA_VISIBLE_DEVICES={:} WORLD_SIZE=1 /root/anaconda3/envs/SPMA/bin/python  -W ignore -m torch.distributed.launch --master_port 9999 --nproc_per_node=1 " \
                "--nnodes=1 ".format(num)
 
     else:
