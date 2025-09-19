@@ -33,12 +33,10 @@
     # 编译 TreeScan
     cd GrootVL/GrootV/third-party/TreeScan
     pip install -v -e .
-    cd ../../../../
 
     # 编译 TreeScanLan
     cd GrootVL/GrootL/third-party/TreeScanLan
     pip install -v -e .
-    cd ../../../../
     ```
 
 ## 数据准备 (Data Preparation)
