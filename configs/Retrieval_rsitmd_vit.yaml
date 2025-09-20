@@ -1,8 +1,8 @@
 ############## The train & val & test set root ##############
-train_file: [/root/Documents/code/HarMA_with_RS5M/data/finetune/rsitmd_train.json]    # Training data file
-val_file: /root/Documents/code/HarMA_with_RS5M/data/finetune/rsitmd_val.json       # Validation data file
-test_file: /root/Documents/code/HarMA_with_RS5M/data/finetune/rsitmd_test.json      # Testing data file
-image_root: /root/Documents/code/HarMA_with_RS5M/data/images/rsitmd        # Root directory for images
+train_file: [./data/finetune/rsitmd_train.json]    # Training data file
+val_file: ./data/finetune/rsitmd_val.json       # Validation data file
+test_file: ./data/finetune/rsitmd_test.json      # Testing data file
+image_root: ./data/images/rsitmd        # Root directory for images
 
 image_res: 224  # no need modify
 patch_size: 32   #if use swin, set the patch_size to 32, else 16
